@@ -1,13 +1,12 @@
 import '../models/lesson_models.dart';
 import '../models/exam_config.dart';
-import 'lgs_units.dart';
+import 'lgs_streaming_units.dart';
 
-export 'lgs_units.dart';
+export 'lgs_streaming_units.dart';
 
-/// LGS Quest Resmi MEB 8. Sınıf Müfredatı
-final List<LearningUnit> mockUnits = lgsUnits;
+/// LGS Quest Resmi Mufredati
+final List<LearningUnit> mockUnits = lgsStreamingUnits;
 
-/// Aktif Quest sınavına göre müfredat ünitelerini döndürür
 List<LearningUnit> getUnitsForExam(ExamFranchise franchise) {
-  return lgsUnits;
+  return lgsStreamingUnits;
 }
