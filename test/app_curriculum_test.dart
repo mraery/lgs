@@ -18,22 +18,22 @@ void main() {
       expect(config.calculateNet(20, 0), equals(20.0));
     });
 
-    test('LGS Quest 62 ünite, 124 ders ve 1000+ sorudan oluşur', () {
+    test('LGS Quest 62 ünite, 434 ders ve 30.000+ sorudan oluşur', () {
       expect(mockUnits.length, equals(62));
       final totalLessons = mockUnits.expand((u) => u.lessons).length;
       final totalQuestions = mockUnits.expand((u) => u.lessons).expand((l) => l.questions).length;
 
-      expect(totalLessons, equals(124));
-      expect(totalQuestions, greaterThanOrEqualTo(1000));
+      expect(totalLessons, equals(434));
+      expect(totalQuestions, greaterThanOrEqualTo(30000));
     });
 
-    test('Her derste 8-12 soru bulunur, ilk soru kavram kartıdır ve son ders kupa sınavıdır', () {
+    test('Her ünitede en az 7 ders bulunur, ilk soru kavram kartıdır ve son ders kupa sınavıdır', () {
       for (final unit in mockUnits) {
-        expect(unit.lessons.length, equals(2));
+        expect(unit.lessons.length, greaterThanOrEqualTo(7));
         expect(unit.lessons.last.isUnitExam, isTrue, reason: '${unit.title} son dersi kupa sınavı olmalı');
 
         for (final lesson in unit.lessons) {
-          expect(lesson.questions.length >= 8 && lesson.questions.length <= 12, isTrue,
+          expect(lesson.questions.length, greaterThanOrEqualTo(75),
               reason: '${lesson.title} (${lesson.id}) dersinde ${lesson.questions.length} soru var');
           if (!lesson.isUnitExam) {
             expect(lesson.questions.first.type, equals(QuestionType.conceptCard),
