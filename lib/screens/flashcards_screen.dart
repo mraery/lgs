@@ -990,6 +990,45 @@ final List<Flashcard> defaultFlashcards = [
     example: "Ruben ve Kamen'in ağır oksijen izotopu (18O) deneyinde sadece suyun oksijeni işaretlendiğinde atmosfere verilen O2'nin işaretli olduğu kanıtlanmıştır.",
     examTip: "Karbondioksitteki (CO2) oksijen ise üretilen glikozun (C6H12O6) ve açığa çıkan metabolik suyun yapısına katılır!",
   ),
+  // ==========================================
+  // 8. SINIF LGS FEN, MATEMATİK, İNKILAP KARTLARI
+  // ==========================================
+  const Flashcard(
+    id: "fc_lgs_fen_1",
+    subject: "LGS Fen Bilimleri",
+    category: "DNA ve Genetik Kod",
+    term: "Modifikasyon vs Adaptasyon",
+    meaning: "Modifikasyon: Çevre etkisiyle genin İŞLEYİŞİNİN değişmesidir (kalıtsal değildir: bronzlaşma, çuha çiçeği). Adaptasyon: Canlının yaşama şansını artıran ve gen YAPISINDAKİ kalıtsal özelliklerdir (kutup ayısı, deve).",
+    example: "Spor yapan kişinin kaslarının gelişmesi modifikasyondur; bukalemunun renk değiştirmesi adaptasyondur.",
+    examTip: "MEB LGS'de 'Çevre şartı eski haline döndüğünde canlı da eski haline dönüyorsa' kesinlikle MODİFİKASYON de!",
+  ),
+  const Flashcard(
+    id: "fc_lgs_fen_2",
+    subject: "LGS Fen Bilimleri",
+    category: "Basınç",
+    term: "Katı Basıncı vs Sıvı Basıncı",
+    meaning: "Katı basıncı ağırlık (G) ile doğru, temas yüzey alanı (S) ile ters orantılıdır (P = G/S). Sıvı basıncı ise derinlik (h) ve sıvı yoğunluğu (d) ile doğru orantılıdır (P = h·d·g).",
+    example: "Bir pasta dikey olarak düzgün kesildiğinde ağırlığı ve taban alanı aynı oranda azaldığı için yere yaptığı katı basıncı DEĞİŞMEZ!",
+    examTip: "Sıvı basıncı kabın genişliğine, şekline veya sıvı miktarına KESİNLİKLE BAĞLI DEĞİLDİR!",
+  ),
+  const Flashcard(
+    id: "fc_lgs_mat_1",
+    subject: "LGS Matematik",
+    category: "Çarpanlar ve Katlar",
+    term: "Aralarında Asal Sayılar Altın Kuralı",
+    meaning: "1'den başka ortak pozitif böleni olmayan sayılara aralarında asal sayılar denir. Sayıların kendilerinin asal olmasına gerek yoktur (Örn: 8 ve 15 aralarında asaldır).",
+    example: "Aralarında asal iki sayının EBOB'u daima 1, EKOK'u ise bu iki sayının çarpımıdır!",
+    examTip: "1 sayısı tüm pozitif tam sayılarla aralarında asaldır; ardışık iki doğal sayı daima aralarında asaldır!",
+  ),
+  const Flashcard(
+    id: "fc_lgs_ink_1",
+    subject: "LGS İnkılap Tarihi",
+    category: "Milli Uyanış",
+    term: "Erzurum Kongresi vs Sivas Kongresi",
+    meaning: "Erzurum Kongresi toplanış bakımından BÖLGESEL, aldığı kararlar bakımından ULUSALDIR. Sivas Kongresi ise hem toplanış hem kararlar bakımından ULUSALDIR.",
+    example: "Manda ve himaye ilk kez Erzurum'da, kesin olarak Sivas Kongresi'nde reddedilmiştir.",
+    examTip: "Sivas Kongresi'nde tüm yararlı cemiyetler 'Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti' adı altında birleştirilmiştir!",
+  ),
 ];
 
 class FlashcardsScreen extends ConsumerStatefulWidget {
@@ -1013,20 +1052,12 @@ class _FlashcardsScreenState extends ConsumerState<FlashcardsScreen>
   String _selectedFilterSubject = 'Tümü';
   final List<String> _filterSubjects = const [
     'Tümü',
-    'TYT Biyoloji',
+    'LGS Fen Bilimleri',
+    'LGS Matematik',
+    'LGS İnkılap Tarihi',
     'TYT Türkçe',
     'TYT Matematik',
-    'TYT Fizik',
-    'TYT Kimya',
-    'TYT Tarih',
-    'TYT Coğrafya',
-    'TYT Felsefe',
-    'TYT Din Kültürü',
-    'AYT Matematik',
-    'AYT Edebiyat',
-    'AYT Fizik',
-    'AYT Kimya',
-    'AYT Biyoloji',
+    'TYT Biyoloji',
   ];
 
   // 3D Flip Animasyonu
